@@ -1,7 +1,9 @@
 import random
 
 check = input('n for new user, e for existing:\n')
-openfile = open('login','r+')
+
+
+openfile = open('db','r+')
 
 
 def captcha():
@@ -23,13 +25,15 @@ if check.lower() == 'n':
         if captchaCheck == ''.join(captchaS):
             print('thank you for creating an account.')
             openfile.write(f'{username}:{password}')
+            openfile.close()
 elif check.lower() == 'e':
-    print('welcome!\nplease enter your username and password')
-    openfile.close()
-    checkUser = input()
-    checkPass = input()
-    if f'{checkUser}:{checkPass}' in openfile.read():
-        print(f'welcome back, {checkUser}')
-    else:
-        checkUser = input()
-        checkPass = input()
+    loggedIn = False
+    Failed = False
+    while not loggedIn:
+        checkUser = input('username: ')
+        checkPass = input('username: ')
+        print('-------------------------------------')
+        if f'{checkUser}:{checkPass}' in openfile.read():
+            print('welcome')
+            loggedIn = True
+            
