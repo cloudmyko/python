@@ -31,7 +31,7 @@ elif check.lower() == 'e':
     Failed = False
     while not loggedIn:
         checkUser = input('username: ')
-        checkPass = input('username: ')
+        checkPass = input('password: ')
         print('-------------------------------------')
         if f'{checkUser}:{checkPass}' in openfile.read():
             print('welcome')
