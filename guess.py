@@ -9,9 +9,9 @@ def game():
             print('please input a number!')
             numRange = int(input())
     
-    if numRange > 50:
-        print("let us not get ahead of ourselves\nsomething below 50\nsmh")
-        numRange = int(input('50 > : '))
+    if numRange > 20:
+        print("let us not get ahead of ourselves\nsomething below 20\nsmh")
+        numRange = int(input('20 > : '))
 
     number = random.randint(1,numRange)
 

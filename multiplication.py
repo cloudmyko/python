@@ -2,7 +2,6 @@ print('multiplication calculator')
 print('*************************')
 number1 = int(input('1: '))
 number2 = int(input('2: '))
-print('\n')
 print('*************************')
 
 
