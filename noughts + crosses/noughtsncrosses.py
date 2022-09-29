@@ -1,5 +1,3 @@
-import random
-
 board = [
     ['.','.','.'],
     ['.','.','.'],
@@ -16,47 +14,28 @@ def printBoard(): # <-- prints the board at the start of the game and after ever
 
 player = random.randint(1,2)
 
-moves = 0
-
 def move():
-    global player
-    global moves
-    if player == 1:
-        mark = 'x'
-    else:
-        mark = 'o'
-    print(f"it is player {player}'s turn ({mark})")
+    print(f"it is player {player}'s turn")
     
-    moved = False
-
-    row = -1 # <-- using both of these to verify if the value is actually changed
+    row = -1 # using both of these to verify if the value is actually changed
     column = -1
 
     r = int(input('what row [0,1,2]'))
     c = int(input('what column [0,1,2]'))
-    
-    while not moved:
 
-        if board[r][c] == '.': # <-- if empty
-            row = r
-            column = c
-            if player == 1:
-                board[row][column] = 'x'
-                player = 2
-                moves += 1
-                not moved
-                printBoard()
-            else:
-                board[row][column] = 'o'
-                player = 1
-                moves += 1
-                not moved
-                printBoard()
+    if board[r][c] == '.': # <-- if empty
+        row = r
+        column = c
+        if player == 1:
+            board[row][column] = 'x'
+            player = 2
+            printBoard()
         else:
-            print('that space is already occupied')
-            r = int(input('what row [0,1,2]'))
-            c = int(input('what column [0,1,2]'))
-    
-    
-         
+            board[row][column] = 'o'
+            player = 1
+            printBoard()
+        
+
 printBoard()
+         
+
