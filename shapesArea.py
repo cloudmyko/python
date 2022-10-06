@@ -1,4 +1,4 @@
-availableShapes = ['square']
+availableShapes = ['square', 'triangle', 'circle']
 
 
 name = input('name of shape: ')
@@ -16,9 +16,9 @@ class Shapes:
 
     def __init__(self, name):
         self.name = name
-        self.running = 1
+        self.running = True
 
-        while self.running == 1:
+        while self.running:
             if name == 'square':
                 length = int(input('length: '))
                 width = int(input('width: '))
@@ -28,8 +28,31 @@ class Shapes:
                     return int(SQarea)
 
                 print(square(length, width))
-                self.running = 0
-        
+                self.running = False
+
+            if name == 'triangle':
+                base = int(input('base of the triangle: '))
+                height = int(input('height of the triangle: '))
+
+                def triangle(b, h):
+                    TRarea = b*h
+                    return int(TRarea)
+
+                print(triangle(base, height))
+                self.running = False
+
+            if name == 'circle':
+                radius = int(input('radius of the circle: '))
+
+                def circle(r):
+                    pi = 3.14159265359
+                    float(r)
+                    circArea = r^2 * pi
+                    return int(circArea)
+
+                print(circle(radius))
+                self.running = False
+
         def runAgain():
             again = input('would you like to run the program again? (y/n): ')
             if again.lower() == 'y':
@@ -40,7 +63,7 @@ class Shapes:
                 quit()
 
 
-        if self.running == 0:
+        if self.running == True:
             runAgain()
 
 
