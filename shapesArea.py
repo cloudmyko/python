@@ -46,9 +46,8 @@ class Shapes:
 
                 def circle(r):
                     pi = 3.14159265359
-                    float(r)
-                    circArea = r^2 * pi
-                    return int(circArea)
+                    circArea = (r**2) * pi
+                    return circArea
 
                 print(circle(radius))
                 self.running = False
